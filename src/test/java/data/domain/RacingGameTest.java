@@ -26,4 +26,13 @@ class RacingGameTest {
         RacingGame game = new RacingGame(1, laps);
         assertThat(game.isNotEnd()).isFalse();
     }
+
+    @Test
+    @DisplayName("자동차를 이동 시키면, 이동 횟수가 차감된다.")
+    void move_and_end() {
+        int laps = 1;
+        RacingGame game = new RacingGame(1, laps);
+        game.move();
+        assertThat(game.isNotEnd()).isFalse();
+    }
 }
