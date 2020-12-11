@@ -16,4 +16,11 @@ class CarTest {
         assertThat(car.move(5)).isEqualTo(1);
     }
 
+    @Test
+    @DisplayName("자동차 이동 테스트 - 4 보다 작으면 멈춘다.")
+    void hold() {
+        Car car = new Car();
+        assertThat(car.move(3)).isEqualTo(0);
+    }
+
 }
