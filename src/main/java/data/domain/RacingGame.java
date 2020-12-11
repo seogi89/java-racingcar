@@ -6,12 +6,13 @@ import java.util.stream.Stream;
 
 public class RacingGame {
 
+    private static final int END_GAME_LAPS = 0;
     private List<Car> cars;
-    private int labs;
+    private int laps;
 
-    public RacingGame(int participants, int labs) {
+    public RacingGame(int participants, int laps) {
         this.cars = ready(participants);
-        this.labs = labs;
+        this.laps = laps;
     }
 
     private List<Car> ready(int participants) {
@@ -21,9 +22,13 @@ public class RacingGame {
     }
 
     public void move() {
-        if(labs == 0) {
+        if(laps == END_GAME_LAPS) {
             throw new IllegalArgumentException("이미 종료 된 레이스 입니다.");
         }
-        labs--;
+        laps--;
+    }
+
+    public boolean isNotEnd() {
+        return laps > END_GAME_LAPS;
     }
 }

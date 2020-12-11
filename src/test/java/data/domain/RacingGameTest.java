@@ -1,6 +1,7 @@
 package data.domain;
 
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
@@ -11,10 +12,18 @@ class RacingGameTest {
     @Test
     @DisplayName("이동 횟수가 없다면, 자동차를 전진 할 수 없다.")
     void move() {
-        int labs = 0;
-        RacingGame game = new RacingGame(1, labs);
+        int laps = 0;
+        RacingGame game = new RacingGame(1, laps);
         assertThatIllegalArgumentException()
             .isThrownBy(game::move)
             .withMessage("이미 종료 된 레이스 입니다.");
+    }
+
+    @Test
+    @DisplayName("이동 횟수가 없다면, 게임은 종료 된다.")
+    void isEnd() {
+        int laps = 0;
+        RacingGame game = new RacingGame(1, laps);
+        assertThat(game.isNotEnd()).isFalse();
     }
 }
