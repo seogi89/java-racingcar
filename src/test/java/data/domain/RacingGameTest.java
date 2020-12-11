@@ -35,4 +35,11 @@ class RacingGameTest {
         game.move();
         assertThat(game.isNotEnd()).isFalse();
     }
+
+    @Test
+    @DisplayName("자동 차를 이동 시키면, 현재 위치 배열을 응답한다.")
+    void move_and_get() {
+        RacingGame game = new RacingGame(2, 2);
+        assertThat(game.move()).hasSize(2);
+    }
 }
