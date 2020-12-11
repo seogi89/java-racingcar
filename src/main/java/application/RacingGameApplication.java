@@ -1,7 +1,7 @@
 package application;
 
-import ui.InputView;
 import data.domain.RacingGame;
+import ui.InputView;
 import ui.OutputView;
 
 public class RacingGameApplication {
@@ -12,7 +12,7 @@ public class RacingGameApplication {
         int laps = InputView.getLaps();
         RacingGame game = new RacingGame(participants, laps);
         OutputView.printResultMessage();
-        while(game.isNotEnd()) {
+        while (game.isNotEnd()) {
             OutputView.print(game.move());
         }
 

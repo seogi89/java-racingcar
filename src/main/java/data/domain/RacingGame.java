@@ -25,8 +25,8 @@ public class RacingGame {
             .collect(Collectors.toList());
     }
 
-    public int [] move() {
-        if(laps == END_GAME_LAPS) {
+    public int[] move() {
+        if (laps == END_GAME_LAPS) {
             throw new IllegalArgumentException("이미 종료 된 레이스 입니다.");
         }
         laps--;
