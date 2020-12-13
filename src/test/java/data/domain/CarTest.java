@@ -9,14 +9,14 @@ class CarTest {
 
 
     @Test
-    @DisplayName("자동차 이동 테스트 - 4 보다 크면 전진한다.")
+    @DisplayName("자동차 이동 테스트 - " + RacingGameConstants.THRESHOLD + " 보다 크면 전진한다.")
     void move() {
         Car car = new Car();
         assertThat(car.move(5)).isEqualTo(1);
     }
 
     @Test
-    @DisplayName("자동차 이동 테스트 - 4 보다 작으면 멈춘다.")
+    @DisplayName("자동차 이동 테스트 -" + RacingGameConstants.THRESHOLD + " 보다 작으면 멈춘다.")
     void hold() {
         Car car = new Car();
         assertThat(car.move(3)).isEqualTo(0);

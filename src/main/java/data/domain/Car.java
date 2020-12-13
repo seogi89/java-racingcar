@@ -1,8 +1,9 @@
 package data.domain;
 
+import static data.domain.RacingGameConstants.THRESHOLD;
+
 public class Car {
 
-    private static final int THRESHOLD = 4;
 
     private int position;
 
