@@ -13,7 +13,7 @@ class RecordsTest {
     void findAllWinner() {
         Record record1 = Record.of("seok", 3);
         Record record2 = Record.of("nari", 3);
-        Record record3 = Record.of("jin", 2);
+        Record record3 = Record.of("jin", 1);
 
         Records records = new Records(List.of(record1, record2, record3));
         assertThat(records.findAllWinners()).contains(record1, record2);

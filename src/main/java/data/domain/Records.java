@@ -22,7 +22,7 @@ public class Records {
 
     private Record findAnyWinner() {
         return elements.stream()
-            .max(Comparator.comparing(Record::getPosition))
+            .max(Comparator.naturalOrder())
             .orElseThrow(IllegalArgumentException::new);
     }
 

@@ -2,7 +2,7 @@ package data.domain;
 
 import java.util.Objects;
 
-public final class Record {
+public class Record implements Comparable<Record> {
 
     private final String name;
     private final int position;
@@ -28,6 +28,7 @@ public final class Record {
         return this.position == other.position;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -46,5 +47,8 @@ public final class Record {
         return Objects.hash(getName(), getPosition());
     }
 
-
+    @Override
+    public int compareTo(Record o) {
+        return this.position - o.position;
+    }
 }
