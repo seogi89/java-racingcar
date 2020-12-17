@@ -24,6 +24,10 @@ public final class Record {
         return position;
     }
 
+    public boolean isSamePosition(Record other) {
+        return this.position == other.position;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -41,4 +45,6 @@ public final class Record {
     public int hashCode() {
         return Objects.hash(getName(), getPosition());
     }
+
+
 }

@@ -1,5 +1,8 @@
 package data.domain;
 
+import static data.domain.RacingGameConstants.ENGINE_MAX_POWER;
+import static java.util.stream.Collectors.collectingAndThen;
+
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -7,7 +10,6 @@ import java.util.stream.Collectors;
 public class RacingGame {
 
     private static final int END_GAME_LAPS = 0;
-    private static final int ENGINE_MAX_POWER = 10;
     private static final Random RANDOM = new Random();
 
     private List<Car> cars;
@@ -24,14 +26,14 @@ public class RacingGame {
             .collect(Collectors.toList());
     }
 
-    public List<Record> move() {
+    public Records move() {
         if (laps <= END_GAME_LAPS) {
             throw new IllegalArgumentException("이미 종료 된 레이스 입니다.");
         }
         laps--;
         return cars.stream()
             .map(car -> car.move(RANDOM.nextInt(ENGINE_MAX_POWER)))
-            .collect(Collectors.toList());
+            .collect(collectingAndThen(Collectors.toList(), Records::new));
     }
 
     public boolean isNotEnd() {
