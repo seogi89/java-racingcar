@@ -24,14 +24,14 @@ public class RacingGame {
             .collect(Collectors.toList());
     }
 
-    public int[] move() {
+    public List<Record> move() {
         if (laps <= END_GAME_LAPS) {
             throw new IllegalArgumentException("이미 종료 된 레이스 입니다.");
         }
         laps--;
         return cars.stream()
-            .mapToInt(car -> car.move(RANDOM.nextInt(ENGINE_MAX_POWER)))
-            .toArray();
+            .map(car -> car.move(RANDOM.nextInt(ENGINE_MAX_POWER)))
+            .collect(Collectors.toList());
     }
 
     public boolean isNotEnd() {

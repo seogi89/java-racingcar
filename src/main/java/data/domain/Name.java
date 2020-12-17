@@ -4,7 +4,7 @@ import static data.domain.RacingGameConstants.NAME_MAX_LENGTH;
 
 public class Name {
 
-    private String name;
+    private final String name;
 
     private Name(String name) {
         if (name.length() > NAME_MAX_LENGTH) {
@@ -15,5 +15,9 @@ public class Name {
 
     public static Name of(String name) {
         return new Name(name);
+    }
+
+    public String getName() {
+        return name;
     }
 }

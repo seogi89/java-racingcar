@@ -1,6 +1,7 @@
 package ui;
 
-import java.util.Arrays;
+import data.domain.Record;
+import java.util.List;
 
 public final class OutputView {
 
@@ -13,9 +14,11 @@ public final class OutputView {
         System.out.println("실행 결과");
     }
 
-    public static void print(int[] positions) {
-        Arrays.stream(positions)
-            .forEach(position -> System.out.println(POSITION_SYMBOL.repeat(position)));
+    public static void print(List<Record> positions) {
+
+        positions.stream()
+            .forEach(
+                record -> System.out.println(record.getName() + ":" + POSITION_SYMBOL.repeat(record.getPosition())));
         System.out.println();
     }
 }
