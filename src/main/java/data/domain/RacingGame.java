@@ -3,7 +3,6 @@ package data.domain;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class RacingGame {
 
@@ -14,14 +13,14 @@ public class RacingGame {
     private List<Car> cars;
     private int laps;
 
-    public RacingGame(int participants, int laps) {
+    public RacingGame(List<String> participants, int laps) {
         this.cars = ready(participants);
         this.laps = laps;
     }
 
-    private List<Car> ready(int participants) {
-        return Stream.generate(Car::new)
-            .limit(participants)
+    private List<Car> ready(List<String> participants) {
+        return participants.stream()
+            .map(Car::of)
             .collect(Collectors.toList());
     }
 
