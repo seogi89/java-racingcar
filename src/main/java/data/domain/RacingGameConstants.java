@@ -1,9 +1,13 @@
 package data.domain;
 
-public interface RacingGameConstants {
+public final class RacingGameConstants {
 
-    int THRESHOLD = 4;
-    int NAME_MAX_LENGTH = 5;
-    int ENGINE_MAX_POWER = 10;
+    protected static final int THRESHOLD = 4;
+    protected static final int NAME_MAX_LENGTH = 5;
+    protected static final int ENGINE_MAX_POWER = 10;
+
+    private RacingGameConstants() {
+
+    }
 
 }
