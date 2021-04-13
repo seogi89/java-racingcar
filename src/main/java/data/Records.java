@@ -1,6 +1,7 @@
 package data;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
@@ -24,7 +25,11 @@ public class Records {
         return elements.stream()
                 .sorted()
                 .findFirst()
-                .orElseThrow();
+                .orElseThrow(() -> new IllegalArgumentException("우승자는 반드시 한명 이상 존재해야합니다."));
+    }
+
+    public Stream<Record> stream() {
+        return elements.stream();
     }
 
 }
