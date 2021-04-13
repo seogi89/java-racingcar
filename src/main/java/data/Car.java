@@ -8,6 +8,14 @@ public class Car {
     private final Name name;
     private int position;
 
+    public Car(String name) {
+        this(new Name(name));
+    }
+
+    public Car(String name, Engine engine) {
+        this(new Name(name), engine);
+    }
+
     public Car(Name name) {
         this(name, EngineGenerator.ofDefault());
     }
