@@ -25,11 +25,11 @@ public class Car {
         this.engine = engine;
     }
 
-    public int move() {
+    public Record move() {
         if (engine.get() >= THRESHOLD) {
             position++;
         }
-        return position;
+        return new Record(this.name.getName(), this.position);
     }
 
 
