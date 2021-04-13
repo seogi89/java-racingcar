@@ -11,9 +11,7 @@ public final class OutputView {
 
     public static void printRecords(Records records) {
         records.stream()
-                .forEach(it -> {
-                    System.out.println(it.getName() + " :" + "-".repeat(it.getPosition()));
-                });
+                .forEach(it -> System.out.println(it.getName() + " :" + "-".repeat(it.getPosition())));
         System.out.println();
     }
 
