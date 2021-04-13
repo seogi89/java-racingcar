@@ -25,6 +25,6 @@ public class Record implements Comparable<Record> {
 
     @Override
     public int compareTo(Record other) {
-        return this.position - other.position;
+        return other.position - this.position;
     }
 }
