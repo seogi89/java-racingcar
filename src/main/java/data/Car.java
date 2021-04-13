@@ -5,13 +5,15 @@ public class Car {
     private static final int THRESHOLD = 4;
 
     private final Engine engine;
+    private final Name name;
     private int position;
 
-    public Car() {
-        this(EngineGenerator.ofDefault());
+    public Car(Name name) {
+        this(name, EngineGenerator.ofDefault());
     }
 
-    public Car(Engine engine) {
+    public Car(Name name, Engine engine) {
+        this.name = name;
         this.engine = engine;
     }
 
